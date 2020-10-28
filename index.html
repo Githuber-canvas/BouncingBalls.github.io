@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Page Title</title>
+	</head>
+	<body>
+	<div id="div"></div>
+	</body>
+	<script>
+	var black=0;
+var red=1;
+var white=2;
+var green=3;
+var blue=4;
+var map=
+[
+[3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3],
+[0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0],
+[4, 0, 1, 1, 3, 3, 3, 1, 1, 0, 4],
+[4, 0, 1, 1, 0, 0, 0, 1, 1, 0, 4],
+[0, 0, 0, 0, 4, 4, 4, 0, 0, 0, 0],
+[0, 0, 0, 0, 4, 4, 4, 0, 0, 0, 0],
+[0, 0, 0, 0, 4, 4, 4, 0, 0, 0, 0],
+[4, 0, 1, 1, 0, 0, 0, 1, 1, 0, 4],
+[4, 0, 1, 1, 3, 3, 3, 1, 1, 0, 4],
+[3, 0, 0, 0, 3, 3, 3, 0, 0, 0, 3]
+]
+var ROWS=map.length;
+var COLUMNS=map[0].length;
+for(var row=0; row < ROWS; row++){
+	for(var column=0; column < COLUMNS; column++){
+		var cell=document.createElement("div");
+		//cell.id="theID";
+		var divvv=document.querySelector("#div");
+		divvv.appendChild(cell);
+		if(map[row][column]===0){
+			cell.style="background-color: black;"
+			cell.id="Id"
+		}
+		if(map[row][column]===1){
+			cell.style="background-color: red;"
+			cell.id="Id"
+		}
+		if(map[row][column]===2){
+			cell.style="background-color: white;"
+			cell.id="Id"
+		}
+		if(map[row][column]===3){
+			cell.style="background-color: green;"
+			cell.id="Id"
+		}
+		if(map[row][column]===4){
+			cell.style="background-color: blue;"
+			cell.id="Id"
+		}
+		var size=30
+		var space=10
+		cell.style.top=row*(size+space)+"px"
+		cell.style.left=column*(size+space)+"px"
+	}
+}
+////////////////
+////////////////
+////////////////
+////////////////[ ]
+	</script>
+	<style>
+	#div{
+	position: relative;
+	height: 90px;
+	width: 90px;
+}
+#Id {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	border: 1px solid black;
+	background-color: white;
+}
+#ID {
+	position: relative;
+	width: 30px;
+	height: 30px;
+	border: 1px solid black;
+	background-color: white;
+}
+#IDD{
+	height: 30px;
+	position: absolute;
+	width: 30px;
+	background-color: blue;
+	top: 90px;
+}
+html{
+    background-color: grey;
+}
+	</style>
+</html>
